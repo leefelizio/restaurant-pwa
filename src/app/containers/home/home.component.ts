@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import {
   ReactiveFormsModule,
 } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FilterByCategoryPipe } from '../../pipes/filterByCategoryPipe/filter-by-category.pipe';
 import { TotalPricePipe } from '../../pipes/totalPricePipe/total-price.pipe';
 import { ApiService } from '../../services/api.service';
@@ -19,24 +19,22 @@ import { IonicModule } from '@ionic/angular';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { LocalStorageService } from '../../services/local-storage.service';
 
-@Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    IonicModule,
-    RouterLink,
-    HeaderComponent,
-    FooterComponent,
-    CommonModule,
-    FilterByCategoryPipe,
-    TotalPricePipe,
-    ReactiveFormsModule,
-    HttpClientModule,
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
-})
+@Component({ selector: 'app-home',
+    standalone: true,
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss', 
+    imports: [
+      RouterOutlet,
+        IonicModule,
+        RouterLink,
+        HeaderComponent,
+        FooterComponent,
+        CommonModule,
+        FilterByCategoryPipe,
+        TotalPricePipe,
+        ReactiveFormsModule
+      ], 
+  })
 export class HomeComponent {
   title!: string;
   categories!: any[]; 

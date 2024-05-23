@@ -19,5 +19,9 @@ export const isAuthGuard: CanActivateFn = async() => {
     router.navigateByUrl('/404');
   }
   // -- finally returns a Boolean to make it work
-  return await service.isAuth();
+  return await service.isAuth() ;
+  // -- Maybe have to 
+  // const booleanIsAuth = await service.isAuth();
+  // const angularRouteUpdate = RedirectCommand(inject(Router).parseUrl('./'),{skipLocationChange}) /* something else*/;
+  // return booleanIsAuth ? true : angularRouteUpdate;
 };
