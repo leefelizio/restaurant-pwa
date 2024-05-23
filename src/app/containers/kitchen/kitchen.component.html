@@ -1,0 +1,77 @@
+<ion-header>
+    <app-header title="Kitchen"></app-header>
+</ion-header>
+<ion-content class="ion-text-center">
+<!-- TO DO: ngIf orders -->
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let data of data$|async" [value]="data.id">
+      <ion-item slot="header" color="light">
+        <ion-label>ORDER {{data.id}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-card class="ion-text-left" *ngFor="let item of data['order']">
+          <h4>RECIPE ID </h4> 
+          <p>{{item.recipe.uuid}}</p> 
+          <!-- TO DO OPTIONAL -  MARK AS DONE AND ADD TO FIREBASE A DONE: TRUE -->
+          <!-- firestoreService.addData(value) -->
+          <!-- <ion-button>Mark as done</ion-button> <br /> -->
+          <h4>QUANTITY</h4>
+          <p>{{item.quantity}}</p>
+        </ion-card>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <!-- BELOW EXAMPLE CODE BEFORE CONNECTING TO FIREBASE (GRID AND ACCORDION) -->
+  <!-- <ion-thumbnail class="img-center">
+    <img src="{{ recipe.imageUrl }}" alt="{{ recipe.title }}" /> <br/>
+  </ion-thumbnail>
+  <h2>
+    {{recipe.title}}
+  </h2>
+  <p>
+    {{recipe.description}}
+  </p>   -->
+  <!-- <hr />
+  <pre>
+    {{data$|async|json}}
+  </pre>
+  <br />
+  manually written
+  <br />
+  <hr /> -->
+  <!-- <ion-grid *ngFor="let data of data$|async" class="ion-text-left">
+    <h3 style="color:aquamarine;">ORDER ID "{{data.id}}"</h3>
+    <ion-row >
+      <ion-col *ngFor="let item of data['order']">     
+        <h4>RECIPE ID </h4> 
+        <p>{{item.recipe.uuid}}</p>
+
+        <h4>QUANTITY</h4>
+        <p>{{item.quantity}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+  <!-- accordion works originally using firestoreService , like below -->
+  <!-- <ion-accordion-group>
+    <ion-accordion *ngFor="let data of data$|async" value="{{data.id}}">
+      <ion-item slot="header" color="light">
+        <ion-label>ORDER {{data.id}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-card class="ion-text-left" *ngFor="let item of data['order']">
+          <h4>RECIPE ID </h4> 
+          <p>{{item.recipe.uuid}}</p>  -->
+          <!-- TO DO MARK AS DONE AND ADD TO FIREBASE A DONE: TRUE -->
+          <!-- firestoreService.addData(value) ?????  -->
+          <!-- <ion-button>Mark as done</ion-button>
+          <br />
+  
+          <h4>QUANTITY</h4>
+          <p>{{item.quantity}}</p>
+        </ion-card>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group> -->
+</ion-content>
+<app-footer></app-footer>
