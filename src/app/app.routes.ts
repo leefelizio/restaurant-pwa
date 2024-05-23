@@ -7,6 +7,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { isAuthGuard } from './guards/is-auth.guard';
 import { NotFoundComponent } from './containers/not-found/not-found.component';
 import { LoginPageComponent } from './containers/login-page/login-page.component';
+import { isNotAuthGuard } from './guards/is-not-auth.guard';
 
 export const routes: Routes = [
     {
@@ -48,6 +49,8 @@ export const routes: Routes = [
     {
       path: 'login',
       component: LoginPageComponent,
+      canActivate: [isNotAuthGuard],
+
     },
     {
       // custom 404

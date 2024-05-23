@@ -2,6 +2,23 @@
   <!-- defaultHref makes the back button show even without navigation history  -->
   <ion-back-button slot="start" defaultHref="/"></ion-back-button>
   <ion-title *ngIf="title"> {{ title }} </ion-title>
+  <ion-button 
+  *ngIf="!(auth.currentUser$|async)"
+    routerLink="/login"
+    fill="clear"
+    slot="end"
+  >
+   Login
+  </ion-button> 
+  <ion-button 
+    *ngIf="auth.currentUser$|async"
+    routerLink="/kitchen"
+    fill="clear"
+    slot="end"
+  >
+  Go to Kitchen
+</ion-button> 
+
   <ion-menu-button slot="start"></ion-menu-button>
   <!-- <button (click)="openMenu()">open menu</button> -->
 </ion-toolbar>

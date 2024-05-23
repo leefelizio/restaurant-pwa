@@ -11,6 +11,7 @@ import { firstValueFrom } from "rxjs";
 // -- import it on this file auth.service.ts 
 
 export class IsAuthService {
+    currentUser$ = user(this._auth);
     signInAnonymously() {
       throw new Error('Method not implemented.');
     }
@@ -33,7 +34,7 @@ export class IsAuthService {
     // }
 
     async isAuth() {
-        const userCredential = await firstValueFrom(user(this._auth))
+        const userCredential = await firstValueFrom(user(this._auth));
         return userCredential ? true : false
     }
 

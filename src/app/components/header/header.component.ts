@@ -1,7 +1,9 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IsUppercasePipe } from '../../pipes/isUppercasePipe/is-uppercase.pipe';
 import { IonicModule } from '@ionic/angular';
+import { RouterLink } from '@angular/router';
+import { IsAuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,9 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     CommonModule,
     IonicModule,
-     IsUppercasePipe
+     IsUppercasePipe,
+     RouterLink,
+     AsyncPipe
     ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -17,6 +21,8 @@ import { IonicModule } from '@ionic/angular';
 export class HeaderComponent {
   @Input() title?: string;
   @Output() buttonClicked: EventEmitter<string> = new EventEmitter();
+
+  constructor(public auth:IsAuthService){}
 
   // openMenu() {
   //   this.buttonClicked.emit('menu');
