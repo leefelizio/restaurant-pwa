@@ -1,7 +1,7 @@
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IsUppercasePipe } from '../../pipes/isUppercasePipe/is-uppercase.pipe';
-import { IonicModule } from '@ionic/angular';
+import { IonToolbar, IonBackButton, IonTitle, IonMenuButton } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { IsAuthService } from '../../services/auth.service';
 
@@ -10,10 +10,13 @@ import { IsAuthService } from '../../services/auth.service';
   standalone: true,
   imports: [
     CommonModule,
-    IonicModule,
-     IsUppercasePipe,
-     RouterLink,
-     AsyncPipe
+    IonToolbar, 
+    IonBackButton, 
+    IonTitle, 
+    IonMenuButton,
+    IsUppercasePipe,
+    RouterLink,
+    AsyncPipe
     ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

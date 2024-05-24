@@ -1,6 +1,6 @@
 // import { Firestore, addDoc, collection } from '@angular/fire/firestore';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonFooter, IonToolbar, IonButton } from '@ionic/angular/standalone';
 import { TotalPricePipe } from '../../pipes/totalPricePipe/total-price.pipe';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { FirestoreService } from '../../services/firestore.service';
@@ -9,7 +9,9 @@ import { FirestoreService } from '../../services/firestore.service';
   selector: 'app-footer',
   standalone: true,
   imports: [
-    IonicModule,
+    IonFooter,
+    IonToolbar,
+    IonButton,
     TotalPricePipe
   ],
   templateUrl: './footer.component.html',

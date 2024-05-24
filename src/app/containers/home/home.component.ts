@@ -15,9 +15,10 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { FilterByCategoryPipe } from '../../pipes/filterByCategoryPipe/filter-by-category.pipe';
 import { TotalPricePipe } from '../../pipes/totalPricePipe/total-price.pipe';
 import { ApiService } from '../../services/api.service';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader, IonSplitPane, IonMenu, IonToolbar, IonTitle, IonList, IonItem, IonLabel, IonContent, IonGrid, IonRow, IonCol, IonAvatar, IonButton, IonSkeletonText, IonListHeader, IonThumbnail } from '@ionic/angular/standalone';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { LocalStorageService } from '../../services/local-storage.service';
+import {  } from '@ionic/angular';
+// import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({ selector: 'app-home',
     standalone: true,
@@ -25,14 +26,30 @@ import { LocalStorageService } from '../../services/local-storage.service';
     styleUrl: './home.component.scss', 
     imports: [
       RouterOutlet,
-        IonicModule,
-        RouterLink,
-        HeaderComponent,
-        FooterComponent,
-        CommonModule,
-        FilterByCategoryPipe,
-        TotalPricePipe,
-        ReactiveFormsModule
+      IonHeader, 
+      IonSplitPane, 
+      IonMenu, 
+      IonToolbar, 
+      IonTitle, 
+      IonList, 
+      IonItem, 
+      IonThumbnail, 
+      IonLabel, 
+      IonContent, 
+      IonGrid, 
+      IonRow, 
+      IonCol, 
+      IonAvatar, 
+      IonButton, 
+      IonSkeletonText,
+      IonListHeader, 
+      RouterLink,
+      HeaderComponent,
+      FooterComponent,
+      CommonModule,
+      FilterByCategoryPipe,
+      TotalPricePipe,
+      ReactiveFormsModule
       ], 
   })
 export class HomeComponent {

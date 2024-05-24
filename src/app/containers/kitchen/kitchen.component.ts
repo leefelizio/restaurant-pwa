@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader, IonContent, IonAccordionGroup, IonAccordion, IonItem, IonLabel, IonCard } from '@ionic/angular/standalone';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 // import { FirestoreService } from '../services/firestore.service';
@@ -13,7 +13,13 @@ import { KitchenService } from '../../services/kitchen.service';
   imports: [
     RouterLink,
     CommonModule,
-    IonicModule,
+    IonHeader,
+    IonContent,
+    IonAccordionGroup, 
+    IonAccordion, 
+    IonItem, 
+    IonLabel,
+    IonCard,
     HeaderComponent,
     FooterComponent
   ],

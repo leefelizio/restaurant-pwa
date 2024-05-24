@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Auth, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import { IonCard, IonCardHeader, IonAvatar, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login-page',
@@ -10,8 +10,14 @@ import { IonicModule } from '@ionic/angular';
   styleUrls: ['./login-page.component.scss'],
   standalone: true, 
   imports: [
-    CommonModule, 
-    IonicModule
+    CommonModule,
+    IonCard,
+    IonCardHeader,
+    IonAvatar, 
+    IonCardTitle, 
+    IonCardSubtitle, 
+    IonCardContent, 
+    IonButton 
   ]
 })
 export class LoginPageComponent  implements OnInit {

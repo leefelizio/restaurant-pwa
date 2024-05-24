@@ -1,12 +1,12 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import '@khmyznikov/pwa-install';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, IonicModule],
+  imports: [RouterModule, IonApp, IonRouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

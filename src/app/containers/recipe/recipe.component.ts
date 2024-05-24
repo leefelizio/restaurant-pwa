@@ -3,14 +3,17 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader, IonContent, IonThumbnail, IonButton } from '@ionic/angular/standalone';
 import 'share-api-polyfill'
 
 @Component({
   selector: 'app-recipe',
   standalone: true,
   imports: [
-    IonicModule,
+    IonHeader,
+    IonContent,
+    IonThumbnail,
+    IonButton,
     HeaderComponent,
     FooterComponent,
   ],
