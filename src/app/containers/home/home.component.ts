@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import {
   ReactiveFormsModule,
 } from '@angular/forms';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FilterByCategoryPipe } from '../../pipes/filterByCategoryPipe/filter-by-category.pipe';
 import { TotalPricePipe } from '../../pipes/totalPricePipe/total-price.pipe';
 import { ApiService } from '../../services/api.service';
