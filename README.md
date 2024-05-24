@@ -1,4 +1,3 @@
 # restaurant-pwa
-Resto Restaurant PWA
 
-Testing
+A Minimum Version Angular App 
